@@ -21,6 +21,7 @@
 		2643784727EF4AFC00703C69 /* Arquivo_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784627EF4AFC00703C69 /* Arquivo_test.swift */; };
 		2643784927EF4B0800703C69 /* Arquivo2_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784827EF4B0800703C69 /* Arquivo2_test.swift */; };
 		A84AD39827EF4D3C0047127C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84AD39727EF4D3C0047127C /* CoreData.framework */; };
+		A84AD39A27EF4F090047127C /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AD39927EF4F090047127C /* ManagedObjectContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		2643784627EF4AFC00703C69 /* Arquivo_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arquivo_test.swift; sourceTree = "<group>"; };
 		2643784827EF4B0800703C69 /* Arquivo2_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arquivo2_test.swift; sourceTree = "<group>"; };
 		A84AD39727EF4D3C0047127C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A84AD39927EF4F090047127C /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				2643784627EF4AFC00703C69 /* Arquivo_test.swift */,
+				A84AD39927EF4F090047127C /* ManagedObjectContext.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				2643780A27EF428E00703C69 /* AppDelegate.swift in Sources */,
 				2643784127EF4A8400703C69 /* Task.swift in Sources */,
 				2643784927EF4B0800703C69 /* Arquivo2_test.swift in Sources */,
+				A84AD39A27EF4F090047127C /* ManagedObjectContext.swift in Sources */,
 				2643784327EF4A9700703C69 /* Aqruivo_teste.swift in Sources */,
 				2643780C27EF428E00703C69 /* SceneDelegate.swift in Sources */,
 				2643781427EF428E00703C69 /* ToDoList.xcdatamodeld in Sources */,

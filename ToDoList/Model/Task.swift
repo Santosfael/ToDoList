@@ -7,6 +7,14 @@
 
 import Foundation
 
+
+struct Task {
+    var id: UUID
+    var name: String
+    var details: String
+    var done: Bool
+}
+
 struct TaskModel: Codable {
     let id: UUID
     let name: String

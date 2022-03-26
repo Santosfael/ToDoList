@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct TaskModel: Codable {
+    let id: UUID
+    let name: String
+    let details: String
+    let done: Bool
+}

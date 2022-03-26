@@ -20,8 +20,13 @@
 		2643784327EF4A9700703C69 /* Aqruivo_teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784227EF4A9700703C69 /* Aqruivo_teste.swift */; };
 		2643784727EF4AFC00703C69 /* Arquivo_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784627EF4AFC00703C69 /* Arquivo_test.swift */; };
 		2643784927EF4B0800703C69 /* Arquivo2_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784827EF4B0800703C69 /* Arquivo2_test.swift */; };
+
+		2643784B27EF510900703C69 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784A27EF510900703C69 /* TaskTableViewCell.swift */; };
+		2643784D27EF60CD00703C69 /* TaskTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784C27EF60CD00703C69 /* TaskTableViewHeader.swift */; };
+
 		8832D4F027EF524A0069A0E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832D4EF27EF524A0069A0E6 /* DetailViewController.swift */; };
 		8832D4F627EF56AC0069A0E6 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832D4F527EF56AC0069A0E6 /* ViewCodable.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +64,13 @@
 		2643784227EF4A9700703C69 /* Aqruivo_teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aqruivo_teste.swift; sourceTree = "<group>"; };
 		2643784627EF4AFC00703C69 /* Arquivo_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arquivo_test.swift; sourceTree = "<group>"; };
 		2643784827EF4B0800703C69 /* Arquivo2_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arquivo2_test.swift; sourceTree = "<group>"; };
+
+		2643784A27EF510900703C69 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		2643784C27EF60CD00703C69 /* TaskTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewHeader.swift; sourceTree = "<group>"; };
+
 		8832D4EF27EF524A0069A0E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8832D4F527EF56AC0069A0E6 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				2643784227EF4A9700703C69 /* Aqruivo_teste.swift */,
+				2643784A27EF510900703C69 /* TaskTableViewCell.swift */,
+				2643784C27EF60CD00703C69 /* TaskTableViewHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +330,8 @@
 				8832D4F027EF524A0069A0E6 /* DetailViewController.swift in Sources */,
 				2643780E27EF428E00703C69 /* HomeViewController.swift in Sources */,
 				2643780A27EF428E00703C69 /* AppDelegate.swift in Sources */,
+				2643784B27EF510900703C69 /* TaskTableViewCell.swift in Sources */,
+				2643784D27EF60CD00703C69 /* TaskTableViewHeader.swift in Sources */,
 				2643784127EF4A8400703C69 /* Task.swift in Sources */,
 				2643784927EF4B0800703C69 /* Arquivo2_test.swift in Sources */,
 				8832D4F627EF56AC0069A0E6 /* ViewCodable.swift in Sources */,

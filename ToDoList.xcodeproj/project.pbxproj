@@ -20,6 +20,7 @@
 		2643784327EF4A9700703C69 /* Aqruivo_teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784227EF4A9700703C69 /* Aqruivo_teste.swift */; };
 		2643784727EF4AFC00703C69 /* Arquivo_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784627EF4AFC00703C69 /* Arquivo_test.swift */; };
 		2643784927EF4B0800703C69 /* Arquivo2_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784827EF4B0800703C69 /* Arquivo2_test.swift */; };
+		A84AD39827EF4D3C0047127C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84AD39727EF4D3C0047127C /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		2643784227EF4A9700703C69 /* Aqruivo_teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aqruivo_teste.swift; sourceTree = "<group>"; };
 		2643784627EF4AFC00703C69 /* Arquivo_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arquivo_test.swift; sourceTree = "<group>"; };
 		2643784827EF4B0800703C69 /* Arquivo2_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arquivo2_test.swift; sourceTree = "<group>"; };
+		A84AD39727EF4D3C0047127C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84AD39827EF4D3C0047127C /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +94,7 @@
 				2643782227EF428F00703C69 /* ToDoListTests */,
 				2643782C27EF428F00703C69 /* ToDoListUITests */,
 				2643780727EF428E00703C69 /* Products */,
+				A84AD39627EF4D3C0047127C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +181,14 @@
 				2643784827EF4B0800703C69 /* Arquivo2_test.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A84AD39627EF4D3C0047127C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A84AD39727EF4D3C0047127C /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

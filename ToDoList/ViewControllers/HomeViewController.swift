@@ -9,10 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private var tasks = [TaskModel]() {
+    lazy var tasks = [TaskModel]() {
         didSet {
-            tasks.sort { _, current in
-                current.done
+            DispatchQueue.main.async {
+                self.tasksTableView.reloadData()
             }
         }
     }
@@ -22,6 +22,12 @@ class HomeViewController: UIViewController {
         tableview.translatesAutoresizingMaskIntoConstraints = false
         return tableview
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configView()
+        configNavigationBar()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,18 +45,7 @@ class HomeViewController: UIViewController {
         
         tasksTableView.register(TaskTableViewHeader.self, forHeaderFooterViewReuseIdentifier: TaskTableViewHeader.identifier)
         tasksTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TaskTableViewCell.identifier)
-        tasks = [
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: true),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-            TaskModel(id: UUID(), name: "Titulo", details: "Descrição", done: false),
-        ]
+        getTasks()
         constraints()
     }
     
@@ -63,7 +58,34 @@ class HomeViewController: UIViewController {
     
     
     @IBAction private func handleAddNewTaks() {
-        print("cliquei")
+        let detailsView = DetailViewController()
+        detailsView.modalPresentationStyle = .fullScreen
+        navigationController?.present(detailsView, animated: true)
+    }
+    
+    @IBAction private func longPressAction(_ gesture: UIGestureRecognizer) {
+        if gesture.state == .began {
+            let cell = gesture.view as! TaskTableViewCell
+            
+            guard let indexPath = tasksTableView.indexPath(for: cell) else { return }
+            
+            var task = tasks[indexPath.row]
+            
+            UpdateStatusTaskCell(controller: self).exibe(task) { alert in
+                ManagedObjectContext.shared.deleteTask(id: task.id) { res in
+                    print(res)
+                }
+                self.tasks.remove(at: indexPath.row)
+            } handlerUpdate: { alert in
+                print(task)
+                task.done = !task.done
+                ManagedObjectContext.shared.updateTask(task: task) { res in
+                    print(res)
+                    print(task)
+                }
+            }
+            
+        }
     }
     
     private func constraints() {
@@ -75,6 +97,12 @@ class HomeViewController: UIViewController {
             tasksTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    
+    private func getTasks() {
+        tasks = ManagedObjectContext.shared.getTask()
+    }
+    
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -95,7 +123,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
+        
+        cell.addGestureRecognizer(longPress)
+        
         cell.configure(with: tasks[indexPath.row])
+        
         return cell
     }
     

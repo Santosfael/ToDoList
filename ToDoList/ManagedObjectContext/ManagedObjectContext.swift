@@ -18,19 +18,19 @@ typealias onCompletionHandler = (String) -> Void
 // MARK: - Protocols
 
 protocol managedSaveProtocol {
-    func saveTask(task: Task, onCompletionHandler: onCompletionHandler)
+    func saveTask(task: TaskModel, onCompletionHandler: onCompletionHandler)
 }
 
 protocol managedGetProtocol {
-    func getTask() -> [Task]
+    func getTask() -> [TaskModel]
 }
 
 protocol managedDeleteProtocol {
-    func delteTask(id: String, onCompletionHandler: onCompletionHandler)
+    func deleteTask(id: UUID, onCompletionHandler: onCompletionHandler)
 }
 
 protocol managedUpdateProtocol {
-    func updateTask(task: Task, onCompletionHandler: onCompletionHandler)
+    func updateTask(task: TaskModel, onCompletionHandler: onCompletionHandler)
 }
 
 
@@ -58,7 +58,7 @@ class ManagedObjectContext: managedSaveProtocol, managedGetProtocol, managedDele
         return appDelegate.persistentContainer.viewContext
     }
     
-    func saveTask(task: Task, onCompletionHandler: (String) -> Void) {
+    func saveTask(task: TaskModel, onCompletionHandler: (String) -> Void) {
         let context = getContext()
         
         guard let entity = NSEntityDescription.entity(forEntityName: entity, in: context) else { return }
@@ -81,8 +81,8 @@ class ManagedObjectContext: managedSaveProtocol, managedGetProtocol, managedDele
         
     }
     
-    func getTask() -> [Task] {
-        var taskList: [Task] = []
+    func getTask() -> [TaskModel] {
+        var taskList: [TaskModel] = []
         
         do {
             
@@ -97,7 +97,7 @@ class ManagedObjectContext: managedSaveProtocol, managedGetProtocol, managedDele
                     let details = task.value(forKey: "details") as? String,
                     let done =  task.value(forKey: "done") as? Bool{
                     
-                    let task = Task(id: id, name: name, details: details, done: done)
+                    let task = TaskModel(id: id, name: name, details: details, done: done)
                     taskList.append(task)
                 }
             }
@@ -109,7 +109,7 @@ class ManagedObjectContext: managedSaveProtocol, managedGetProtocol, managedDele
         return taskList
     }
     
-    func delteTask(id: String, onCompletionHandler: (String) -> Void) {
+    func deleteTask(id: UUID, onCompletionHandler: (String) -> Void) {
         let context = getContext()
         
         let predicate = NSPredicate(format: "id == %@", "\(id)")
@@ -167,7 +167,7 @@ class ManagedObjectContext: managedSaveProtocol, managedGetProtocol, managedDele
         
     }*/
     
-    func updateTask(task: Task, onCompletionHandler: (String) -> Void) {
+    func updateTask(task: TaskModel, onCompletionHandler: (String) -> Void) {
         let context = getContext()
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
         

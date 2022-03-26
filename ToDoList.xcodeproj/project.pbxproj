@@ -113,6 +113,7 @@
 		2643780827EF428E00703C69 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				A84AD39B27EF67BC0047127C /* ManagedObjectContext */,
 				2643784527EF4ACA00703C69 /* Extensions */,
 				2643784427EF4AC200703C69 /* Commons */,
 				2643783F27EF4A3700703C69 /* Model */,
@@ -173,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				2643784627EF4AFC00703C69 /* Arquivo_test.swift */,
-				A84AD39927EF4F090047127C /* ManagedObjectContext.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -192,6 +192,14 @@
 				A84AD39727EF4D3C0047127C /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A84AD39B27EF67BC0047127C /* ManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				A84AD39927EF4F090047127C /* ManagedObjectContext.swift */,
+			);
+			path = ManagedObjectContext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

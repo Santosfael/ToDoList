@@ -31,8 +31,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configView()
-        configNavigationBar()
+//        configView()
+//        configNavigationBar()
+//        print(ManagedObjectContext.shared.getTask())
     }
     
     private func configView() {
@@ -59,34 +60,35 @@ class HomeViewController: UIViewController {
     
     @IBAction private func handleAddNewTaks() {
         let detailsView = DetailViewController()
+        detailsView.screenMode = "NewTask"
         detailsView.modalPresentationStyle = .fullScreen
         navigationController?.present(detailsView, animated: true)
     }
     
-    @IBAction private func longPressAction(_ gesture: UIGestureRecognizer) {
-        if gesture.state == .began {
-            let cell = gesture.view as! TaskTableViewCell
-            
-            guard let indexPath = tasksTableView.indexPath(for: cell) else { return }
-            
-            var task = tasks[indexPath.row]
-            
-            UpdateStatusTaskCell(controller: self).exibe(task) { alert in
-                ManagedObjectContext.shared.deleteTask(id: task.id) { res in
-                    print(res)
-                }
-                self.tasks.remove(at: indexPath.row)
-            } handlerUpdate: { alert in
-                print(task)
-                task.done = !task.done
-                ManagedObjectContext.shared.updateTask(task: task) { res in
-                    print(res)
-                    print(task)
-                }
-            }
-            
-        }
-    }
+//    @IBAction private func longPressAction(_ gesture: UIGestureRecognizer) {
+//        if gesture.state == .began {
+//            let cell = gesture.view as! TaskTableViewCell
+//
+//            guard let indexPath = tasksTableView.indexPath(for: cell) else { return }
+//
+//            var task = tasks[indexPath.row]
+//
+//            UpdateStatusTaskCell(controller: self).exibe(task) { alert in
+//                ManagedObjectContext.shared.deleteTask(id: task.id) { res in
+//                    print(res)
+//                }
+//                self.tasks.remove(at: indexPath.row)
+//            } handlerUpdate: { alert in
+//                print(task)
+//                task.done = !task.done
+//                ManagedObjectContext.shared.updateTask(task: task) { res in
+//                    print(res)
+//                    print(task)
+//                }
+//            }
+//
+//        }
+//    }
     
     private func constraints() {
         //Tableview
@@ -117,6 +119,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return header
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = tasks[indexPath.row]
+        let detailsView = DetailViewController()
+        detailsView.screenMode = "UpdateTask"
+        detailsView.taskId = task.id
+        detailsView.taskname = task.name
+        detailsView.taskDescription = task.details
+        detailsView.taskDone = task.done
+        detailsView.modalPresentationStyle = .fullScreen
+        navigationController?.present(detailsView, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -124,11 +138,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
+        /*let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
         
-        cell.addGestureRecognizer(longPress)
-        
+        cell.addGestureRecognizer(longPress)*/
+        print([indexPath.row])
         cell.configure(with: tasks[indexPath.row])
+        
         
         return cell
     }

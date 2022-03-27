@@ -56,10 +56,11 @@ class TaskTableViewCell: UITableViewCell {
     func configure(with model: TaskModel) {
         nameLabel.text = model.name
         descriptionLabel.text = model.details
-        taskDone(done: model.done)
+        //taskDone(done: model.done)
     }
     
     private func taskDone(done: Bool) {
+        print(done)
         if done {
             nameLabel.textColor = .gray
             descriptionLabel.textColor = .gray

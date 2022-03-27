@@ -21,6 +21,7 @@
 		2643784D27EF60CD00703C69 /* TaskTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643784C27EF60CD00703C69 /* TaskTableViewHeader.swift */; };
 		8832D4F027EF524A0069A0E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832D4EF27EF524A0069A0E6 /* DetailViewController.swift */; };
 		8832D4F627EF56AC0069A0E6 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832D4F527EF56AC0069A0E6 /* ViewCodable.swift */; };
+		A845B4A227F0C05A003AA0C1 /* DetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845B4A127F0C05A003AA0C1 /* DetailViewControllerExtension.swift */; };
 		A84AD39827EF4D3C0047127C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84AD39727EF4D3C0047127C /* CoreData.framework */; };
 		A84AD39A27EF4F090047127C /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AD39927EF4F090047127C /* ManagedObjectContext.swift */; };
 		A84AD39D27EF6FD20047127C /* UpdateStatusTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AD39C27EF6FD20047127C /* UpdateStatusTaskCell.swift */; };
@@ -62,6 +63,7 @@
 		2643784C27EF60CD00703C69 /* TaskTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewHeader.swift; sourceTree = "<group>"; };
 		8832D4EF27EF524A0069A0E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8832D4F527EF56AC0069A0E6 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		A845B4A127F0C05A003AA0C1 /* DetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		A84AD39727EF4D3C0047127C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A84AD39927EF4F090047127C /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A84AD39C27EF6FD20047127C /* UpdateStatusTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStatusTaskCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		2643780827EF428E00703C69 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				A845B4A027F0C046003AA0C1 /* Extensions */,
 				A84AD39B27EF67BC0047127C /* ManagedObjectContext */,
 				2643784427EF4AC200703C69 /* Commons */,
 				2643783F27EF4A3700703C69 /* Model */,
@@ -182,6 +185,14 @@
 				A84AD39C27EF6FD20047127C /* UpdateStatusTaskCell.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		A845B4A027F0C046003AA0C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A845B4A127F0C05A003AA0C1 /* DetailViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A84AD39627EF4D3C0047127C /* Frameworks */ = {
@@ -331,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8832D4F027EF524A0069A0E6 /* DetailViewController.swift in Sources */,
+				A845B4A227F0C05A003AA0C1 /* DetailViewControllerExtension.swift in Sources */,
 				2643780E27EF428E00703C69 /* HomeViewController.swift in Sources */,
 				2643780A27EF428E00703C69 /* AppDelegate.swift in Sources */,
 				A84AD39D27EF6FD20047127C /* UpdateStatusTaskCell.swift in Sources */,
